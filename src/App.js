@@ -8,8 +8,13 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <SearchRes />
+          The Top 20 GoogleBooks Hits
+          <button id="bookbutton" className="uk-button uk-button-default">Saved Books</button>
+          <button id="searchbutton" className="uk-button uk-button-default">Search</button>
         </header>
+        <body>
+          <SearchRes />
+        </body>
       </div>
     );
   }

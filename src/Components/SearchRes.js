@@ -5,16 +5,16 @@ import API from "../api/API";
 
 class SearchRes extends Component {
   state = {
-    search: "",
+    search: "React",
     results: []
   };
 
   componentDidMount() {
-    this.searchBook();
+    this.searchBook("National Parks");
   }
 
-  searchBook = () => {
-    API.search()
+  searchBook = (keywords) => {
+    API.search(keywords)
       .then(res => this.setState({ results: res.data.items }))
       .catch(err => console.log(err));
   };
