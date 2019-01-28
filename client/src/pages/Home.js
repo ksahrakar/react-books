@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SearchRes from "../Components/SearchRes";
 
-class Books extends Component {
+class Home extends Component {
     render() {
         return (
             <div className="SResCont">
@@ -11,4 +11,4 @@ class Books extends Component {
     }
 }
 
-export default Books;
+export default Home;
