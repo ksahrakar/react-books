@@ -1,21 +1,25 @@
 import React, { Component } from 'react';
+import {BrowserRouter as Router,Route,Switch} from "react-router-dom";
 import './App.css';
-import SearchRes from "./Components/SearchRes";
+import Books from "./pages/Home";
+import Saved from "./pages/Saved";
+import NoMatch from "./pages/NoMatch";
+import NavBar from "./Components/NavBar";
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          The Top 20 GoogleBooks Hits
-          <button id="bookbutton" className="uk-button uk-button-default">Saved Books</button>
-          <button id="searchbutton" className="uk-button uk-button-default">Search</button>
-        </header>
-        <body>
-          <SearchRes />
-        </body>
-      </div>
+      <Router>
+        <div className="App">
+          <NavBar/>
+          <Switch>
+            <Route exact path="/" component={Books} />
+            <Route exact path="/Saved" component={Saved} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
